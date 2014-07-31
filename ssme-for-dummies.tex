@@ -1,140 +1,41 @@
-%% Requires fithesis2 module (can be downloaded from
-%% https://github.com/arax/fithesis2
-%% Load document class fithesis2
-%% {10pt, 11pt, 12pt}
-%% {draft, final}
-%% {oneside, twoside}
-%% {onecolumn, twocolumn}
-%% sudo yum install texlive texlive-babel-czech texlive-hyphen-czech 
+\documentclass[a4paper]{article}
 
-\documentclass[10pt,final,oneside]{fithesis2}
-\pdfoptionpdfminorversion 7
+\usepackage[utf8x]{inputenc}
 
-%% Basic packages
-\usepackage[czech]{babel}
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-
-%% Additional packages for colors, advanced
-%% formatting options, etc.
-\usepackage{color}
-\usepackage{microtype}
-\usepackage{url}
-\usepackage{cslatexquotes}
-\usepackage{fancyvrb}
-\usepackage[small,bf]{caption}
-\usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref}
-\usepackage[all]{hypcap}
-\usepackage{amssymb}
-\usepackage{courier}
-\usepackage{listings}
-\usepackage{pdfpages}
-
-%% Fix long URLs in DVIs
-\usepackage{ifpdf}
-
-\ifpdf
-\else
-  \usepackage{breakurl}
-\fi
-
-%% Packages used to generate various lists
-\usepackage{makeidx}
-\makeindex
-
-\usepackage[acronym]{glossaries}
-\makeglossaries
-
-\include{tex/glossary}
-
-%% Use STAR and CIRCLE signs for nested
-%% itemized lists
-\renewcommand{\labelitemii}{$\star$}
-\renewcommand{\labelitemiii}{$\circ$}
-
-%% Title page information
-\thesistitle{Vytvoření specializovaného klienta pro podporu e-learningového portálu}
-\thesissubtitle{Diplomová práce}
-\thesisstudent{Marek Vantuch}
-\thesiswoman{false} %% Important when using Slovak or Czech lang
-\thesisfaculty{fi}  %% {fi, eco, law, sci, fsps, phil, ped, med, fss}
-\thesislang{cs}     %% {en, sk, cs}
-\thesisyear{2014}
-\thesisadvisor{Ing. Leonard Walletzký, Ph.D}
-
-%% Beginning of the document
 \begin{document}
+\pagenumbering{gobble}
+\title{SSME for Dummies}
+\author{Marek Vantuch, Daniel Polan, Filip Hyža, Irina Dyldina, Ivana Haraslinová, \\Jiří Forman, Jan Vavrečka}
+\date{2014}
+\maketitle
+\clearpage
 
-%% Front page with a logo and basic thesis information
-\FrontMatter
-\ThesisTitlePage
-
-
-%% Thesis declaration (required)
-\begin{ThesisDeclaration}
-  \DeclarationText
-  \AdvisorName
-\end{ThesisDeclaration}
-
-%%\chapter*{Zadání práce}
-%%Na základě analýzy možných Open Source klientů, podporujících připojení ke vzdálené ploše (Remonte Desktop) vyberte nejvhodnější a ten dále upravte tak, aby sloužil ke spuštění vzdálené aplikace po kliknutí na speciální odkaz v prohlížeči (aplikace ASPI). V případě nutnosti vytvořte obslužný plug-in do prohlížeče, sloužící pro předávání parametrů vzdálené aplikaci. Dále připravte obslužný systém pro vkládání textů, obsahujících odkazy do aplikace ASPI a jejich editaci.
-
-\begin{ThesisThanks}
-Chtěl bych obzvláště poděkovat Ing. Leonardu Walletzkému, Ph.D za příležitost pracovat na tomto projektu a za maximální podporu při jeho vypracování. Dále JUDr. Jindřišce Šedové, CSc. za konzultace a podporu při vývoji. Děkuji také všem svým spolupracovníkům za ohleduplnost a trpělivost nutnou s ohledem na ztížené podmínky, které byly způsobeny mou prací ze zahraničí. Speciálně Mgr. Ondrovi Maternovi za návrh celého řešení, Bc. Ivaně Haraslínové za design a jeho aplikaci a Mgr. Radkovi Foltýnovi za všeobecnou koordinaci projektu.
-\end{ThesisThanks}
-
-\begin{ThesisAbstract}
-Tato práce popisuje implementaci internetového portálu pro fakultu Ekonomicko-správní Masarykovy Univerzity. Jsou zahrnuty dvě hlavní části, popis úprav existujícího řešení postaveného na open-source CMS systému Drupal a jeho propojení pomocí vzdálené plochy na servery ASPI. Při vývoji byl kladen důraz na udržitelnost a strukturalizaci řešení. Ačkoliv Drupal typicky ukládá nastavení v databázi, pomocí dostupných nástrojů byla tato data exportována do PHP kódu a byl nastaven proces jejich přenesení do testovacího či produkčního prostředí. Pro ulehčení byly vytvořeny skripty, které byly propojeny s ,,Continous Integration'' serverem. Důraz byl kladen i na uživatelskou přívětivost a jednoduchost, kterých bylo dosaženo sjednocením platformy postavené na Drupalu a existující implementace vzdálené plochy využívající HTML5 a JavaScriptu a implementací přihlašování autorizací skrze Informační systém Masarykovy Univerzity.
-\end{ThesisAbstract}
-
-%% Keywords (required)git
-\begin{ThesisKeyWords}
-Guacamole, vzdálená plocha, ASPI, ESF, Drupal, Team City, Drush, Phing, CORS, WebSockets, JAVA, PHP, JavaScript
-\end{ThesisKeyWords}
-
-%% Beginning of the thesis itself
-\MainMatter
-
-%% TOC (required)
+\pagenumbering{gobble}
 \tableofcontents
+\clearpage
 
-%% Thesis text structured using
-%% chapters, sections, subsections, etc.
-\include{tex/uvod}
-\include{tex/analyza}
-\include{tex/implementace-drupal}
-\include{tex/implementace-guacamole}
-\include{tex/instalace}
-\include{tex/vyvoj}
-\include{tex/zaver}
+\section*{Intro}
+This is intro.
 
-%% Lists of tables and figures, glossary, etc.
-\printindex
-\printglossary[type=\acronymtype,title={Zkratky}]
-\printglossary
-\listoffigures
-\listoftables
+\section*{How to learn}
+This is how to learn.
 
-%% Bibliography from references.bib
-\begingroup
-\def\tmpchapter{0}
-\renewcommand{\chaptername}{}
-\renewcommand{\thechapter}{}
-%\addtocontents{toc}{\setcounter{tocdepth}{-1}}
-\chapter{Reference}
-\renewcommand{\chapter}[2]{}% for other classes
+\include{tex/01_service_systems_fundamentals}
+\include{tex/02_service_computational_systems}
+\include{tex/03_service_oriented_architecture}
+\include{tex/04_domain_understanding}
+\include{tex/05_semantics_information}
+\include{tex/06_connection_oriented_approach}
+\include{tex/07_bpmn}
+\include{tex/08_pppm}
+\include{tex/09_toc}
+\include{tex/10_teamwork}
+\include{tex/11_distribute_algorithms}
+\include{tex/12_net_centric}
+\include{tex/13_security}
+\include{tex/14_cryptography}
+\include{tex/15_gui}
+\include{tex/16_product_service_economy}
+\include{tex/17_marketing}
 
-\bibliographystyle{plain}
-\bibliography{mvantuch}
-
-%\addtocontents{toc}{\setcounter{tocdepth}{2}}
-\endgroup
-
-%% Additional materials
-\appendix
-
-%% End of the whole document
 \end{document}

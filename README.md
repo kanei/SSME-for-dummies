@@ -9,4 +9,4 @@ Requirements & Installation (Linux)
 Installation will be explained for Fedora (possibly RHEL would work too)
 
 1. Get linux
-2. ```sudo yum install latexila texlive```
+2. ```sudo yum install latexila texlive texlive-babel-czech```
